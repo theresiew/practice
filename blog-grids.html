@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Grids - GoStartup</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body {
+  background: linear-gradient(90deg, #0b1120 0%, #0e1b34 50%, #0b1120 100%);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.8s ease-out forwards; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+</style>
+</head>
+
+<body class="text-white overflow-x-hidden">
+
+<header class="fixed w-full top-0 z-50 bg-[#0b1120]/95 backdrop-blur-md border-b border-white/5">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex justify-between items-center">
+
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-tr from-blue-500 to-indigo-600 rotate-45 rounded-lg"></div>
+        <h1 class="text-2xl font-bold">GoStartup</h1>
+      </a>
+
+      <nav class="hidden lg:flex gap-8 text-gray-300 items-center">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="index.html#features" class="hover:text-white transition-colors">Features</a>
+        <div class="relative group">
+          <button class="hover:text-white transition-colors flex items-center gap-1 text-blue-400">
+            Pages
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 mt-2 w-48 bg-[#1a2332] rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="blog-grids.html"  class="block px-4 py-3 text-blue-400 bg-white/5 rounded-t-lg">Blog Grids</a>
+            <a href="blog-details.html" class="block px-4 py-3 hover:bg-white/10 transition-colors">Blog Details</a>
+            <a href="404.html"          class="block px-4 py-3 hover:bg-white/10 transition-colors">404 Error</a>
+            <a href="signin.html"       class="block px-4 py-3 hover:bg-white/10 transition-colors">Sign In</a>
+            <a href="signup.html"       class="block px-4 py-3 hover:bg-white/10 rounded-b-lg transition-colors">Sign Up</a>
+          </div>
+        </div>
+        <a href="index.html#support" class="hover:text-white transition-colors">Support</a>
+      </nav>
+
+      <div class="hidden lg:flex gap-4 items-center">
+        <a href="signin.html" class="px-6 py-2.5 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">
+          Sign In
+        </a>
+        <a href="signup.html" class="px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30">
+          Sign Up
+        </a>
+      </div>
+
+      <button class="lg:hidden text-2xl" onclick="toggleMenu()">☰</button>
+    </div>
+
+    <div id="mobileMenu" class="hidden flex-col gap-4 mt-4 pb-4">
+      <a href="index.html" class="hover:text-white">Home</a>
+      <a href="blog-grids.html" class="text-blue-400">Blog Grids</a>
+      <a href="signin.html" class="hover:text-white">Sign In</a>
+      <a href="signup.html" class="hover:text-white">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<div class="h-20"></div>
+<section class="bg-white/5 border-b border-white/10 py-16">
+  <div class="container mx-auto px-6 text-center">
+    <h1 class="text-4xl lg:text-5xl font-bold mb-4">Blog Grids</h1>
+    <p class="text-gray-400 text-lg mb-6">Latest News & Articles From Our Blog</p>
+   
+    <div class="flex items-center justify-center gap-2 text-gray-400 text-sm">
+      <a href="index.html" class="hover:text-white transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-blue-400">Blog Grids</span>
+    </div>
+  </div>
+</section>
+
+<section class="container mx-auto px-6 py-24">
+
+  <div class="text-center mb-16">
+    <span class="text-blue-400 text-sm font-semibold tracking-wider uppercase mb-3 block">BLOGS</span>
+    <h2 class="text-4xl lg:text-5xl font-bold mb-6">Latest News & Articles From Our Blog</h2>
+    <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+      convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
+      ante in maximus.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <div class="opacity-0 fade-in delay-1 group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+      <div class="overflow-hidden">
+        <img src="images/image-10.jpg"
+             class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+             alt="Blog 1">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-3 text-sm mb-4">
+          <span class="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full">Online Business</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+          <a href="blog-details.html">Free advertising for your online business</a>
+        </h3>
+        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim.
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-400 border-t border-white/10 pt-4">
+          <div class="flex items-center gap-2">
+            <img src="images/image-11.jpg" class="w-8 h-8 rounded-full" alt="Author">
+            <span>Musharof Chy</span>
+          </div>
+          <span>25 Dec, 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="opacity-0 fade-in delay-2 group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+      <div class="overflow-hidden">
+        <img src="images/image-12.jpg"
+             class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+             alt="Blog 2">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-3 text-sm mb-4">
+          <span class="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full">Ui/Ux Design</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+          <a href="blog-details.html">9 simple ways to improve your design skills</a>
+        </h3>
+        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim.
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-400 border-t border-white/10 pt-4">
+          <div class="flex items-center gap-2">
+            <img src="images/image-10.jpg" class="w-8 h-8 rounded-full" alt="Author">
+            <span>Musharof Chy</span>
+          </div>
+          <span>19 Mar, 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="opacity-0 fade-in delay-3 group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+      <div class="overflow-hidden">
+        <img src="images/image-11.jpg"
+             class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+             alt="Blog 3">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-3 text-sm mb-4">
+          <span class="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full">Web Development</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+          <a href="blog-details.html">Tips to quickly improve your coding speed</a>
+        </h3>
+        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim.
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-400 border-t border-white/10 pt-4">
+          <div class="flex items-center gap-2">
+            <img src="images/image-12.jpg" class="w-8 h-8 rounded-full" alt="Author">
+            <span>Musharof Chy</span>
+          </div>
+          <span>15 Feb, 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="opacity-0 fade-in delay-4 group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+      <div class="overflow-hidden">
+        <img src="images/image-10.jpg"
+             class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+             alt="Blog 4">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-3 text-sm mb-4">
+          <span class="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full">Marketing</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+          <a href="blog-details.html">How to grow your business with digital marketing</a>
+        </h3>
+        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim.
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-400 border-t border-white/10 pt-4">
+          <div class="flex items-center gap-2">
+            <img src="images/image-11.jpg" class="w-8 h-8 rounded-full" alt="Author">
+            <span>Olivia Andrium</span>
+          </div>
+          <span>10 Jan, 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="opacity-0 fade-in delay-5 group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+      <div class="overflow-hidden">
+        <img src="images/image-12.jpg"
+             class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+             alt="Blog 5">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-3 text-sm mb-4">
+          <span class="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full">Startup</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+          <a href="blog-details.html">10 things every startup founder should know</a>
+        </h3>
+        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim.
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-400 border-t border-white/10 pt-4">
+          <div class="flex items-center gap-2">
+            <img src="images/image-10.jpg" class="w-8 h-8 rounded-full" alt="Author">
+            <span>Jemse Kemorun</span>
+          </div>
+          <span>05 Feb, 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="opacity-0 fade-in delay-6 group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+      <div class="overflow-hidden">
+        <img src="images/image-11.jpg"
+             class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+             alt="Blog 6">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-3 text-sm mb-4">
+          <span class="px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full">Analytics</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+          <a href="blog-details.html">Using data analytics to drive business growth</a>
+        </h3>
+        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum sapien ac leo cursus dignissim.
+        </p>
+        <div class="flex items-center justify-between text-sm text-gray-400 border-t border-white/10 pt-4">
+          <div class="flex items-center gap-2">
+            <img src="images/image-12.jpg" class="w-8 h-8 rounded-full" alt="Author">
+            <span>Avi Pestarica</span>
+          </div>
+          <span>28 Jan, 2025</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="flex justify-center items-center gap-3 mt-16">
+    <button class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 hover:bg-blue-600 hover:border-blue-600 transition-all flex items-center justify-center text-gray-400 hover:text-white">
+      ←
+    </button>
+    <button class="w-10 h-10 rounded-lg bg-blue-600 border border-blue-600 text-white">1</button>
+    <button class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 hover:bg-blue-600 hover:border-blue-600 transition-all text-gray-400 hover:text-white">2</button>
+    <button class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 hover:bg-blue-600 hover:border-blue-600 transition-all text-gray-400 hover:text-white">3</button>
+    <button class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 hover:bg-blue-600 hover:border-blue-600 transition-all flex items-center justify-center text-gray-400 hover:text-white">
+      →
+    </button>
+  </div>
+
+</section>
+
+<footer class="border-t border-white/10 mt-12">
+  <div class="container mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-4 gap-12">
+
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-gradient-to-tr from-blue-500 to-indigo-600 rotate-45 rounded-lg"></div>
+          <h1 class="text-2xl font-bold">GoStartup</h1>
+        </div>
+        <p class="text-gray-400 mb-6 max-w-md">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        
+        <div class="flex gap-2">
+          <input type="email" placeholder="Enter your email"
+                 class="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-blue-500 focus:outline-none text-sm">
+          <button class="px-5 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition-all text-sm">
+            Subscribe
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4 text-lg">Company</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Product</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4 text-lg">Support</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors">Company</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Press media</a></li>
+          <li><a href="blog-grids.html" class="hover:text-white transition-colors">Our Blog</a></li>
+          <li><a href="index.html#support" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/10 mt-12 pt-8 flex flex-wrap justify-between items-center gap-4 text-gray-400 text-sm">
+      <p>© 2025 GoStartup. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Support</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('hidden');
+  menu.classList.toggle('flex');
+}
+</script>
+
+</body>
+</html>
