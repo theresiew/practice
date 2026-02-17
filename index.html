@@ -6,126 +6,28 @@
 <title>GoStartup - Tailwind CSS Template</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-html { scroll-behavior: smooth; }
-body { 
-  background: linear-gradient(90deg,#0b1120,#0e1b34,#0b1120);
-  overflow-x: hidden;
+.word-cycle span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  animation: wordCycle 12s infinite;
 }
-
-/* Tab Active State */
-.tab-active {
-  border-bottom: 2px solid #4f6df5;
-  color: white;
-}
-
-/* Scrolling Text Animation */
-@keyframes scroll-text {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.scroll-container {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-}
-
-.scroll-text {
-  display: flex;
-  animation: scroll-text 20s linear infinite;
-  white-space: nowrap;
-}
-
-.scroll-text span {
-  padding: 0 2rem;
-  font-size: 1.125rem;
-  color: #94a3b8;
-}
-
-/* Hero Image Floating Animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-.floating-image {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Gradient Glow Animation */
-@keyframes glow {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.6; }
-}
-
-.glow-animation {
-  animation: glow 4s ease-in-out infinite;
-}
-
-/* Fade In Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-/* Stagger delays for children */
-.stagger-item:nth-child(1) { animation-delay: 0s; }
-.stagger-item:nth-child(2) { animation-delay: 0.1s; }
-.stagger-item:nth-child(3) { animation-delay: 0.2s; }
-.stagger-item:nth-child(4) { animation-delay: 0.3s; }
-.stagger-item:nth-child(5) { animation-delay: 0.4s; }
-.stagger-item:nth-child(6) { animation-delay: 0.5s; }
-
-/* Portfolio Filter Active State */
-.filter-active {
-  background-color: #4f6df5;
-  color: white;
-}
-
-/* Mobile Menu */
-.mobile-menu {
-  display: none;
-}
-
-.mobile-menu.active {
-  display: flex;
-}
-
-/* Smooth transitions */
-* {
-  transition: all 0.3s ease;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0b1120;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #4f6df5;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #6b7ff5;
+.word-cycle span:nth-child(1) { animation-delay: 0s; }
+.word-cycle span:nth-child(2) { animation-delay: 3s; }
+.word-cycle span:nth-child(3) { animation-delay: 6s; }
+.word-cycle span:nth-child(4) { animation-delay: 9s; }
+@keyframes wordCycle {
+  0%  { opacity: 0; transform: translateY(30px); }
+  8%  { opacity: 1; transform: translateY(0); }
+  25% { opacity: 1; transform: translateY(0); }
+  33% { opacity: 0; transform: translateY(-30px); }
+  100%{ opacity: 0; transform: translateY(-30px); }
 }
 </style>
 </head>
 
-<body class="text-white">
+<body class="bg-gradient-to-r from-[#0b1120] via-[#0e1b34] to-[#0b1120] text-white">
 
 <header class="fixed w-full top-0 z-50 bg-[#0b1120]/95 backdrop-blur-md border-b border-white/5">
   <div class="container mx-auto px-6 py-4">
@@ -174,10 +76,17 @@ body {
       Tailwind Template for Startups
     </div>
 
-    <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-      Digital Solutions for <br>
-      Your <span class="underline decoration-blue-500">Startup</span>
-    </h2>
+    <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+  Digital Solutions for Your
+  <span class="block mt-2 relative h-[1.2em]">
+    <span class="word-cycle">
+      <span class="absolute left-0 top-0 whitespace-nowrap font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">Startup</span>
+      <span class="absolute left-0 top-0 whitespace-nowrap font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">Business</span>
+      <span class="absolute left-0 top-0 whitespace-nowrap font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">Agency</span>
+      <span class="absolute left-0 top-0 whitespace-nowrap font-bold bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">SaaS</span>
+    </span>
+  </span>
+</h1>
 
     <p class="text-gray-400 mb-10 max-w-xl">
       Handcrafted Tailwind CSS template for your next - Startup,
@@ -193,11 +102,24 @@ body {
     </div>
   </div>
 
-  <div class="relative flex justify-center">
-    <img src="images/image-1.jpg"
-         class="w-[380px] rounded-xl shadow-2xl relative z-10" alt="Hero Image">
-    <div class="absolute -bottom-10 left-10 w-40 h-40 bg-blue-600 rounded-full blur-3xl opacity-30"></div>
+ <div class="relative w-[500px] h-[500px]">
+
+ <div class="relative w-[600px] h-[550px]">
+
+  <!-- Back image (top right, taller) -->
+  <div class="absolute top-0 right-0 w-[520px] h-[520px] rounded-2xl overflow-hidden">
+    <img src="images/image-2 (1).jpg" class="w-full h-full object-cover" alt="image 2">
   </div>
+
+  <!-- Front image (bottom left, overlapping) -->
+  <div class="absolute bottom-0 left-0 w-[380px] h-[420px] rounded-2xl overflow-hidden shadow-2xl z-10">
+    <img src="images/image-1.jpg" class="w-full h-full object-cover" alt="image 1">
+  </div>
+
+  <!-- Blue circle decoration (bottom center) -->
+  <div class="absolute bottom-12 right-20 w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-800 rounded-full z-20 opacity-90 blur-sm"></div>
+
+</div>
 
 </section>
 
@@ -290,36 +212,46 @@ body {
     <button class="tab pb-4" onclick="switchTab(2)">Our Vision</button>
   </div>
 
-  <div class="tab-content pt-12 grid md:grid-cols-2 gap-16 items-center">
+ <div class="tab-content pt-12 grid md:grid-cols-2 gap-16 items-center">
 
-    <div class="relative">
-      <img src="images/image-2.jpg"
-           class="rounded-xl shadow-2xl" alt="About Us">
-      <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600 rounded-full blur-3xl opacity-20"></div>
+  <!-- LEFT COLUMN - Images wrapped in relative container -->
+  <div class="relative w-full h-[580px]">
+
+    <!-- Back image (bigger, color) -->
+    <div class="absolute top-0 left-0 w-[420px] h-[540px] rounded-2xl overflow-hidden">
+      <img src="images/image-1 (1).jpg" class="w-full h-full object-cover" alt="image 1">
     </div>
 
-    <div>
-      <h4 class="text-3xl font-bold mb-6">
-        We are Creative Digital Agency Based in USA
-      </h4>
-      <p class="text-gray-400 mb-6">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Fusce condimentum sapien ac leo cursus dignissim. In ac
-        lectus vel orci accumsan ultricies at in libero accumsan.
-      </p>
-      <p class="text-gray-400 mb-6">
-        Phasellus ex massa, facilisis ac vestibulum eget, ultrices
-        quis nulla. Integer vitae magna lacus. Sed venenatis
-        auctor dolor.
-      </p>
-      <p class="text-gray-400">
-        Phasellus ex massa, facilisis ac vestibulum eget, ultrices
-        quis nulla. Integer vitae magna lacus. Sed venenatis
-        auctor dolor.
-      </p>
+    <!-- Front image (smaller, black & white, overlapping) -->
+    <div class="absolute top-10 left-32 w-[320px] h-[480px] rounded-2xl overflow-hidden shadow-2xl z-10">
+      <img src="images/image-2.jpg" class="w-full h-full object-cover grayscale" alt="image 2">
     </div>
 
   </div>
+
+  
+  <div>
+    <h4 class="text-3xl font-bold mb-6">
+      We are Creative Digital Agency Based in USA
+    </h4>
+    <p class="text-gray-400 mb-6">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Fusce condimentum sapien ac leo cursus dignissim. In ac
+      lectus vel orci accumsan ultricies at in libero accumsan.
+    </p>
+    <p class="text-gray-400 mb-6">
+      Phasellus ex massa, facilisis ac vestibulum eget, ultrices
+      quis nulla. Integer vitae magna lacus. Sed venenatis
+      auctor dolor.
+    </p>
+    <p class="text-gray-400">
+      Phasellus ex massa, facilisis ac vestibulum eget, ultrices
+      quis nulla. Integer vitae magna lacus. Sed venenatis
+      auctor dolor.
+    </p>
+  </div>
+
+</div>
 
 </section>
 
